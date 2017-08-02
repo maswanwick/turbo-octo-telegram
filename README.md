@@ -14,7 +14,7 @@ The guide outlines the common attributes shared between TI Auto, ETS, and Malver
 - The cookbook name should be clear and describe the unit of configuration the cookbook is managing.
 
 ##### Recipes
--The recipe name should describe the purpose of the recipe.
+- The recipe name should describe the purpose of the recipe.
 
 ##### Attribute
 - The attribute name should be lowercase.
@@ -47,10 +47,18 @@ The guide outlines the common attributes shared between TI Auto, ETS, and Malver
         - Steps necessary to contribute to the cookbook
 
 ##### Headers
+- All Chef managed files and templates should have a header indicating that the file is managed by Chef with a link to the owning cookbook's source control repository.
 
 ##### Artifacts
+- All cookbooks must be uploaded to Cerner Chef Supermarket and Chef environments and Spork.
+- All Supermarket and Chef uploads must occur from Electric Commander.
 
 #### Formatting
+- Use two spaces for indentation.
+- Limit lines to 120 characters.
+- Use snake case for naming variables, methods, files, and directories.
+- Use camel case for naming classes and modules.
+- Code comments should be succinct. Remove irrelevant comments from code.
 
 ### Behavior
 
