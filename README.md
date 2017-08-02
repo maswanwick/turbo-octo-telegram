@@ -88,9 +88,9 @@ The guide outlines the common attributes shared between TI Auto, ETS, and Malver
 ##### Configuration Repositories
 | Organization | Repo location |
 | ------------ | ------------- |
-| ETS | https://github.cerner.com/ets/ets_chef-repo |
-| CWXTI Auto | https://github.cerner.com/CWXAutomation |
-| Malvern | https://github.cerner.com/cernerhs-cwx-ti |
+|ETS | https://github.cerner.com/ets/ets_chef-repo |
+|CWXTI Auto | https://github.cerner.com/CWXAutomation |
+|Malvern | https://github.cerner.com/cernerhs-cwx-ti |
 
 ### Process
 
@@ -142,9 +142,9 @@ Use cookstyle via rubocop to validate cookbooks are following established Chef/R
 
 | Cookbook Type | Naming Standard | Example Name |
 | ------------- | --------------- | ------------ |
-| CernerWorks Tech Stack Role Cookbook | cwx_<tech_stack>_role | cwx_linux_role |
-| CernerWorks Tech Improvement Automation Developed Cookbook | cwxtiauto_<cookbook_name> | cwxtiauto_logdir |
-| Client Ops Developed Cookbook | clientops_<cookbook_name> | clientops_zabbix |
+|CernerWorks Tech Stack Role Cookbook | cwx_<tech_stack>_role | cwx_linux_role |
+|CernerWorks Tech Improvement Automation Developed Cookbook | cwxtiauto_<cookbook_name> | cwxtiauto_logdir |
+|Client Ops Developed Cookbook | clientops_<cookbook_name> | clientops_zabbix |
 
 ##### Roles
 - All roles should be created in the cwx_chef_config GitHub repository (https://github.cerner.com/CWxAutomation/cwx_chef_config) within the roles directory.
@@ -277,10 +277,42 @@ https://github.cerner.com/CWxAutomation/cwxtiauto_lvm/blob/dev/README.md
 - If a cookbook will perform an action that is client-impacting or would normally require a scheduled event with the client, use a feature attribute to prevent that action from running without explicit specification.
 
 #### Logging
+Standard logging configurations for all executions of 'chef-client' are managed by the cwx_linux_role cookbook (https://github.cerner.com/CWxAutomation/cwx_linux_role).
+:warning: Modifying the logging configuration manually may results in incomplete logging and failure to properly execute 'chef-client' on the server.
 
 ##### Location
+Current log for 'chef-client' executions is **/var/log/chef/chef-client.log** on servers within the **cernerworks_rho** Chef organization.
+```
+view /var/log/chef/chef-client.log
+```
 
 ##### Configuration
+Chef reads logging configurations from the **client.rb** file located in the **/etc/chef** directory.
+
+**Items**
+The following configuration items are found within the **client.rb** file.
+|Item|
+|----|
+|chef_server_url|
+|validation_client_name|
+|log_location|
+|log_level|
+|node_name|
+|trusted_certs_dir|
+
+For detailed information on the configuration items, please see the official Chef [documentation](https://docs.chef.io/config_rb_client.html).
+
+**Example**
+
+The following **client.rb** is a correct example of what to expect on a server managed by Chef.
+```
+chef_server_url "https://cwxtiauto01.cernerasp.com/organizations/cernerworks"
+validation_client_name "chef-validator"
+log_location "/var/log/chef/chef-client.log"
+log_level :info
+node_name "cwimmo72402.cernerasp.com"
+trusted_certs_dir "/etc/chef/trusted_certs"
+```
 
 ##### Rotation
 Logs are rotated every week using [logrotate](https://linux.die.net/man/8/logrotate) and kept for four weeks as compressed files.
@@ -299,9 +331,9 @@ The following configuration items are currently utilized in the logrotate config
 
 | Item | Description |
 | ---- | ----------- |
-| weekly | Logs are rotated weekly. |
-| rotate 4 | Logs are kept four weeks. |
-| compress | Logs are compressed when located. |
+|weekly | Logs are rotated weekly. |
+|rotate 4 | Logs are kept four weeks. |
+|compress | Logs are compressed when located. |
 
 **Example**
 
