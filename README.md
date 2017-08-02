@@ -170,9 +170,19 @@ zzz-cerner-<subsys name>.<ext>
 
 #### Documentation
 
-##### Readme.md
+##### README.md
+:white_check_mark: **Example README.md**
+https://github.cerner.com/CWxAutomation/cwxtiauto_java_patching/blob/master/README.md
+
+:white_check_mark: **Example README.md with Custom Resources**
+https://github.cerner.com/CWxAutomation/cwxtiauto_lvm/blob/dev/README.md
 
 ##### Headers
+:white_check_mark: **Example**
+```
+# This file is managed by the cwxtiauto_example Chef cookbook and manual changes will be erased on the next chef-client run
+# More information on  this  cookbook can be found at https: //github.cerner.com/CWxAutomation/cwxtiauto_example
+```
 
 ### Behavior
 
