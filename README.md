@@ -212,7 +212,66 @@ https://github.cerner.com/CWxAutomation/cwxtiauto_lvm/blob/dev/README.md
         |p2 | P2Sentinel node|
         |was | WAS on Linux node|
 
+    - **node['cwx']['region']**
+        - Used when flexing based on the region of a given node.
+        - Set via role cookbook.
+        - Valid values:
+
+        |Valid Value | Details|
+        |clientops_australia | CernerWorks Client Ops Australia Region|
+        |clientops_canada | CernerWorks Client Ops Canada Region|
+        |clientops_central | CernerWorks Client Ops Central US Region|
+        |clientops_federal | CernerWorks Client Ops Federal Region|
+        |clientops_france | CernerWorks Client Ops France Region|
+        |clientops_global | CernerWorks Client Ops Global Region (Generic)|
+        |clientops_midwest | CernerWorks Client Ops Midwest US Region|
+        |clientops_northatlantic | CernerWorks Client Ops Northatlantic US Region|
+        |clientops_southeast | CernerWorks Client Ops Southeast US Region|
+        |clientops_uk | CernerWorks Client Ops UK Region|
+        |clientops_west | CernerWorks Client Ops West US Region|
+        |ehosting | CernerWorks eHosting Region|
+        |internal | CernerWorks Internal Region|
+
+    - **node['server']['data_center']**
+        - Used when flexing based on the data center of a given node.
+        - Set via role cookbook.
+        - Valid values:
+
+        |Valid Value | Details |
+        |AUS_IR | Australia IR Data Center|
+        |AUS_LDR | Australia LDR Data Center|
+        |CD_Q9 | Canada Q9 Data Center|
+        |CD_SUNGARD | Canada Sungard Data Center|
+        |FRA_PA4 | France PA4 Data Center|
+        |INJAZAT | Injazat (UAE) Data Center|
+        |KC1 | KC1 Data Center|
+        |KC2 | KC2 Data Center|
+        |KC3 | KC3 Data Center|
+        |KC4 | KC4 Data Center|
+        |KC5 | KC5 Data Center|
+        |KC6 | KC6 Data Center|
+        |KC7 | KC7 Data Center|
+        |LS1 | LS1 Data Center|
+        |LS2 | LS2 Data Center|
+        |LS3 | LS3 Data Center|
+        |LS4 | LS4 Data Center|
+        |LS5 | LS5 Data Center|
+        |LS6 | LS6 Data Center|
+        |LS7 | LS7 Data Center|
+        |UK_CL3 | UK CL3 Data Center|
+        |UK_LD5 | UK LD5 Data Center|
+
+    - **node['server']['onsite']**
+        - Used when flexing based on whether a node is located at a client site.
+        - Set via role cookbook.
+        - Valid values:
+
+        |Valid Value | Details |
+        |true | Node is located at a client site|
+        |nil | Node is not located at a client site|
+
 ##### Feature Attributes
+- If a cookbook will perform an action that is client-impacting or would normally require a scheduled event with the client, use a feature attribute to prevent that action from running without explicit specification.
 
 #### Logging
 
