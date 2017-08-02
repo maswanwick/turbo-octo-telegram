@@ -63,12 +63,18 @@ The guide outlines the common attributes shared between TI Auto, ETS, and Malver
 ### Behavior
 
 #### Idempotency
+- All recipes, cookbooks, and custom resources should be safe to run multiple times in sequence with identical results and should only act when necessary.
 
 #### Attribute Handling
 
 ##### Validation
+- Validate attributes prior to use.
+    - Raise an exception if the required attribute is in an invalid format.
+    - Raise an exception or log a warning and return (depending on the criticality) if the required attribute is missing.
 
 ##### Default Attributes
+- Default attributes should be used unless a higher level is required.
+    - It is necessary to allow consumers to override attributes in roles, environment, or wrapper cookbooks.
 
 #### Configuration
 
