@@ -172,9 +172,11 @@ zzz-cerner-<subsys name>.<ext>
 
 ##### README.md
 :white_check_mark: **Example README.md**
+
 https://github.cerner.com/CWxAutomation/cwxtiauto_java_patching/blob/master/README.md
 
 :white_check_mark: **Example README.md with Custom Resources**
+
 https://github.cerner.com/CWxAutomation/cwxtiauto_lvm/blob/dev/README.md
 
 ##### Headers
@@ -189,6 +191,25 @@ https://github.cerner.com/CWxAutomation/cwxtiauto_lvm/blob/dev/README.md
 #### Attribute Handling
 
 ##### Standard Attributes
+- Standard attributes are defined by roles in the Chef environment and assigned to nodes. More information on currently developed standard attributes can be found at the cwx_chef_config repository (https://github.cerner.com/CWxAutomation/cwx_chef_config).
+    - **node['cwx']['tech_stack']**
+        - Used when flexing based on the technology stack of the given node.
+        - Set via a role cookbook.
+        - Valid values:
+        | Valid Value | Details |
+        | ----------- | ------- |
+        |724midtier | 724 DTV (Level 2) midtier node|
+        |724roapp | 724 Read Only (Level 1) Millennium application node|
+        |724rodb | 724 Read Only (Level 1) Millennium database node|
+        |camm | CAMM node|
+        |gluster | gluster node|
+        |ibus | iBus node|
+        |millapp | Millennium application node|
+        |millcombo | Millennium application/database node (full stack)|
+        |milldb | Millennium database node|
+        |nfs | NFS node|
+        |p2 | P2Sentinel node|
+        |was | WAS on Linux node|
 
 ##### Feature Attributes
 
