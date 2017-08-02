@@ -4,11 +4,7 @@ The purpose of this guide is to outline the standards and best practices for dev
 The guide outlines the common attributes shared between TI Auto, ETS, and Malvern, as well as governance specific to the individual organizations.
 
 <details>
-   <summary>click to expand</summary>
-   test text
-</details>
-
-
+   <summary>Common</summary>
 ## Common
 
 ### Style Guide
@@ -100,3 +96,4 @@ The guide outlines the common attributes shared between TI Auto, ETS, and Malver
 ##### Prod or master branch
 
 #### Releasing
+</details>
