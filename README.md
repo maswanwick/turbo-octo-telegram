@@ -83,6 +83,7 @@ The guide outlines the common attributes shared between TI Auto, ETS, and Malver
  - http://blog.siphos.be/2013/05/the-linux-d-approach/
 
 ##### Local Mode
+- When executing the Chef client in local mode, a separate configuration file must be created instead of using the standard client.rb in the Chef configuration directory.
 
 ##### Configuration Repositories
 | Organization | Repo location |
@@ -94,24 +95,40 @@ The guide outlines the common attributes shared between TI Auto, ETS, and Malver
 ### Process
 
 #### Static Code Analysis/Linting
+Use cookstyle via rubocop to validate cookbooks are following established Chef/Ruby coding style guidelines.
 
 #### Testing
 
 ##### Unit
+- Leverage ChefSpec for unit testing when possible
+- Libraries should be unit tested.
 
 ##### Integration
+- Test local through frameworks such as Test Kitchen.
+- Inspec tests are preferred, but serverspec is also acceptable.
+- Dependency on external services should be avoided. Leverage fixture cookbooks as needed.
 
 ##### Pull Request
+- Unit testing execution and integration testing via openstack is recommended.
 
 #### Source Control
+- All code and configuration must be committed to a source control repository.
+- Source controlled configuration will be uploaded to Chef via a CI/CD tool such as Jenkins or Spork.
 
 #### Code Review
 
 ##### Dev or non-master branch
+- Two +1 with at least one architect reviewing.
+- Test evidence can be provided by the developer.
 
 ##### Prod or master branch
+- Two +1 with at least one architect reviewing.
+- Test evidence is required and must be executed by a non-contributor to the code changes.
 
 #### Releasing
+- Use semantic versioning for applying version numbers.
+    - http://semver.org/
+
 </details>
 
 <details><summary>TI Auto</summary>
