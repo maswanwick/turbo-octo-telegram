@@ -472,4 +472,71 @@ C:\chef-repo\data_bags\slpa\
     - Windows: **C:\chef\keys**
     - Linux/Unix: **/etc/chef/keys**
 
+### Behavior
+
+#### Attribute Handling
+
+##### Environment Attributes
+- Environment files must include the following base set of default attributes.
+
+    |Attribute |Description |
+    |--------- |----------- | 
+    |['common'] | Top level key for common environment level attributes.|
+    |['ad_domain_name'] | NetBIOS name for Active Directory (ex. RESDM50)|
+    |['ad_domain_dns_suffix'] | DNS suffix of Active Directory domain (ex. resdm50.siemensmedasp.com)|
+    |['dns_suffix_search_order'] | DNS suffix search list for DNS configuration|
+    |['enable_media_authentication'] | Boolean variable which is set when media server requires authentication|
+    |['media_url'] | Artifactory Media URL with username and encrypted password|
+    |['media_api_key'] | Artifactory REST API Key|
+    |['smtp_host'] | SMTP Mail Server Hostname|
+    |['smtp_port'] | SMTP Port for Mail Server|
+
+
+
+#### Ruby Gems and External Utilities
+- New development using Chef should always attempt to be written using resources from the Chef DSL or native Ruby libraries. 
+- Third party Ruby gems usually provide support for multiple platforms and should be considered and reviewed first if the Chef environment does not provide a specific library. 
+- Use of platform specific utilities or binaries should be used if no Ruby libraries are available.
+
+#### Roles and Role Cookbooks
+- Role cookbooks will be used in place of using server roles as role cookbooks provide greater flexibility compared to Chef roles. 
+- Role cookbooks contain attributes, a run list or configuration for a specific role using recipes, and allows for cookbook versioning specific to that run list within the metadata.rb file.
+- Default recipes should include run list of all recipes to manage the configuration policy of that server's role.
+
+#### Internal Mode vs. On Demand
+- Organize recipes that can be executed on-demand during an event or for configuration management.
+
+:white_check_mark: **Example structure:**
+
+- wsus_client
+    - Recipes:
+        - default (contains configuration elements that will be executed during every Chef client run)
+            - Avoid use of this recipe in cookbooks as the default recipe name does not clearly define the purpose of the recipe.
+        - configure_wsus_client (contains configuration elements that will configure the WSUS client on a server)
+            - This can be added using include_recipe in the default recipe to ensure the WSUS client is configured properly on each interval run
+        - patch_system (contains the process and configuration elements required to patch and reboot a system)
+            - This recipe would be executed on demand during an event.  If this is not defined in the default recipe, it will not execute during a Chef client run until it is explicitly defined.
+
+
+- The Chef client can be called by passing in the **--override-runlist** (or **-o**) argument to execute a specific cookbook or recipe.
+- For example, based on the example cookbook, the Chef client service could be stopped first, then the chef-client -o recipe[wsus_client::patch_system] command could be executed on a server on demand during a scheduled event to patch the system.
+- When executing a on demand job during an event, interval mode can be turned off by stopping the Chef client service.  Restart the Chef client service to enable interval mode.
+
+### Process
+
+#### Source Control
+- For common, shared cookbooks, one repository per cookbook must be used.
+- Solutions can store all cookbooks in one repository.
+
+#### Code Review
+
+##### RHO Deployments
+- RHO Chef administrators must be included in the code review before they are uploaded to the production environment.
+- Refer to the following guide for submission acceptance criteria and process for the RHO Chef Enterprise system.
+    - https://wiki.ucern.com/display/HSCernerWorks/RHO+Chef+Automation+Submission+Process+and+Requirements
+
+
+#### Releasing
+- Releases must be tagged if using GitHub for source control.
+
 </details>
