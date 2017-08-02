@@ -61,6 +61,8 @@ The guide outlines the common attributes shared between TI Auto, ETS, and Malver
 #### Configuration
 
 ##### System Configuration
+ - When altering system configuration, use the conf.d custom configuration methodology.
+ - http://blog.siphos.be/2013/05/the-linux-d-approach/
 
 ##### Local Mode
 
