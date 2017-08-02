@@ -7,9 +7,9 @@ The guide outlines the common attributes shared between TI Auto, ETS, and Malver
 
 ### Style Guide
 
-#### Naming Convention
+   #### Naming Convention
 
-##### Cookbook
+      ##### Cookbook
 
 ##### Recipes
 
