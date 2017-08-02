@@ -8,9 +8,10 @@ The guide outlines the common attributes shared between TI Auto, ETS, and Malver
 ### Style Guide
 
 #### Naming Convention
-:warning: All names should contain undersocres instead of hyphens.
+:warning: All names should contain underscores instead of hyphens.
 
 ##### Cookbook
+- The cookbook name should be clear and describe the unit of configuration the cookbook is managing.
 
 ##### Recipes
 
