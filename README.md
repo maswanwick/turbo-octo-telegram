@@ -354,12 +354,13 @@ An example of a correct logrotate configuration file for Chef is as follows.
 </details>
 
 <details><summary>ETS</summary>
+
 ### Style Guide
 
 #### Naming Convention
 
 ##### Cookbook
-- Preface cookbook names with cerner_ to remove conflicts with open source or community names.
+- Preface cookbook names with **cerner_** to remove conflicts with open source or community names.
 
 #### Process
 
