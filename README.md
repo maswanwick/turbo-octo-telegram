@@ -217,7 +217,8 @@ https://github.cerner.com/CWxAutomation/cwxtiauto_lvm/blob/dev/README.md
         - Set via role cookbook.
         - Valid values:
 
-        |Valid Value | Details|
+        | Valid Value | Details |
+        | ----------- | ------- |
         |clientops_australia | CernerWorks Client Ops Australia Region|
         |clientops_canada | CernerWorks Client Ops Canada Region|
         |clientops_central | CernerWorks Client Ops Central US Region|
@@ -237,7 +238,8 @@ https://github.cerner.com/CWxAutomation/cwxtiauto_lvm/blob/dev/README.md
         - Set via role cookbook.
         - Valid values:
 
-        |Valid Value | Details |
+        | Valid Value | Details |
+        | ----------- | ------- |
         |AUS_IR | Australia IR Data Center|
         |AUS_LDR | Australia LDR Data Center|
         |CD_Q9 | Canada Q9 Data Center|
@@ -266,7 +268,8 @@ https://github.cerner.com/CWxAutomation/cwxtiauto_lvm/blob/dev/README.md
         - Set via role cookbook.
         - Valid values:
 
-        |Valid Value | Details |
+        | Valid Value | Details |
+        | ----------- | ------- |
         |true | Node is located at a client site|
         |nil | Node is not located at a client site|
 
