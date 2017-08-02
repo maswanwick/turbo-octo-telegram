@@ -354,6 +354,23 @@ An example of a correct logrotate configuration file for Chef is as follows.
 </details>
 
 <details><summary>ETS</summary>
+### Style Guide
+
+#### Naming Convention
+
+##### Cookbook
+- Preface cookbook names with cerner_ to remove conflicts with open source or community names.
+
+#### Process
+
+##### Source Control
+- Code and Chef Objects (data bags, roles, environments, etc.) must be source controlled in Cerner GitHub.
+
+#### Releasing
+- Follow the ETS Operation Engineering Low Risk Release, Documentation and Testing Strategy development process.
+    - [Operational Engineering Low Risk Release, Documentation and Testing Strategy](https://wiki.ucern.com/display/ETSrvcs/Operational+Engineering+Low+Risk+Release%2C+Documentation+and+Testing+Strategy)
+- Anyone can release, but only certain architects can perform merge and tag operations in the release.
+    - Architect certification TBD.
 
 </details>
 
