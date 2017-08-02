@@ -278,6 +278,7 @@ https://github.cerner.com/CWxAutomation/cwxtiauto_lvm/blob/dev/README.md
 
 #### Logging
 Standard logging configurations for all executions of 'chef-client' are managed by the cwx_linux_role cookbook (https://github.cerner.com/CWxAutomation/cwx_linux_role).
+
 :warning: Modifying the logging configuration manually may results in incomplete logging and failure to properly execute 'chef-client' on the server.
 
 ##### Location
@@ -290,7 +291,9 @@ view /var/log/chef/chef-client.log
 Chef reads logging configurations from the **client.rb** file located in the **/etc/chef** directory.
 
 **Items**
+
 The following configuration items are found within the **client.rb** file.
+
 |Item|
 |----|
 |chef_server_url|
