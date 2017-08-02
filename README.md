@@ -377,4 +377,99 @@ An example of a correct logrotate configuration file for Chef is as follows.
 
 <details><summary>Malvern</summary>
 
+### Style Guide
+
+#### Naming Convention
+
+##### ALT Allowable Values
+- Refer to this link to review the list of allowable values in regards to naming conventions and mnemonics
+    - https://wiki.ucern.com/pages/viewpage.action?spaceKey=HSALT&title=Allowable+Values
+
+##### Attributes
+- Attributes must be created using the following format (use underscores for spaces):
+
+:white_check_mark: **Examples:**
+
+```
+default['cookbook_name']['attribute_1'] = 'some_value'
+default['cookbook_name']['attribute_2'] = 'another_value'
+```
+
+##### Roles
+- Roles must be created using the following format:
+
+```
+[app_Id]_role_[server_role]
+```
+
+:white_check_mark: **Examples:**
+
+```
+sf_role_primary_server
+s2_role_application_server
+hep_role_ems_primary_server
+hosting_role_windows_2012_base_os
+```
+
+##### Environment
+- Environment names should using the following format:
+
+```
+{app_Id}_{release_version}
+```
+
+:white_check_mark: **Examples:**
+
+```
+Soarian Financials 4.1: sf_4_1
+Soarian Financials 4.2.100: sf_4_2_100
+HEP 1.2 SP2: hep_1_2_sp2
+S2 4.2: s2_4_2
+```
+##### Methods
+- Method names should not be prefixed with verbs (get, set, is).
+- Boolean methods should end with **?**.
+
+#### Documentation
+
+##### Metadata.rb
+- Metadata.rb should contain the following sections.
+    - **Version**
+        - The cookbook version must be incremented appropriately when updates have been committed and the cookbook is ready to be released.
+    - **Contact Information**
+        - Developer or development team.
+    - **Issue Tracking**
+        - Link to the JIRA queue used to log issues.
+    - **Source_URL**
+        - Link to the cookbook's source control repository.
+
+#### Environments
+
+##### Environment Files
+- Environment files will contain information and data releate to a major release cycle of an application.
+- Environment files created for hot fix and smaller service pack releases will not be supported.
+
+##### Versioning
+- Cookbook version will be defined within these environment files for that specific release.
+
+#### Data Bags
+- All dynamic properties must be stored in the application's specific data bag.
+- Data bag names for applications should follow the ALT standard of allowable values.
+
+:white_check_mark: **Examples:**
+
+```
+C:\chef-repo\data_bags\hep\
+C:\chef-repo\data_bags\sf\
+C:\chef-repo\data_bags\s2\
+C:\chef-repo\data_bags\slpa\
+```
+
+#### Encrypted Values
+- All passwords stored within data bags, environment files, or source code of cookbooks must be encrypted.
+- Third party encryption applications or libraries should not be used. Encrypted data bag items within Chef must be used for encrypting secure items.
+- The keys used to encrypt the encrypted data bags must be stored in the following locations:
+    - Windows: **C:\chef\keys**
+    - Linux/Unix: **/etc/chef/keys**
+
 </details>
