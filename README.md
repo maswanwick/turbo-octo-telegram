@@ -14,10 +14,14 @@ The guide outlines the common attributes shared between TI Auto, ETS, and Malver
 - The cookbook name should be clear and describe the unit of configuration the cookbook is managing.
 
 ##### Recipes
+-The recipe name should describe the purpose of the recipe.
 
 ##### Attribute
+- The attribute name should be lowercase.
+- Attributes within a cookbook must have the cookbook name first and the attribute name second. This will avoid potential override conflicts with attributes in other cookbooks or environment files.
 
 ##### Role
+- The role name should be descriptive and named according to the value set within the role.
 
 #### Documentation
 
