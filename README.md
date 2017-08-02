@@ -138,6 +138,12 @@ Use cookstyle via rubocop to validate cookbooks are following established Chef/R
 #### Naming Convention
 
 ##### Cookbook
+- Cookbooks should be named according to the following table.
+| Cookbook Type | Naming Standard | Example Name |
+| ------------- | --------------- | ------------ |
+| CernerWorks Tech Stack Role Cookbook | cwx_<tech_stack>_role | cwx_linux_role |
+| CernerWorks Tech Improvement Automation Developed Cookbook | cwxtiauto_<cookbook_name> | cwxtiauto_logdir |
+| Client Ops Developed Cookbook | clientops_<cookbook_name> | clientops_zabbix |
 
 ##### Roles
 - All roles should be created in the cwx_chef_config GitHub repository (https://github.cerner.com/CWxAutomation/cwx_chef_config) within the roles directory.
@@ -156,6 +162,10 @@ default_attributes(
 ```
 
 ##### Conf.d
+```
+zzz-cerner-<subsys name>.<ext>
+```
+:warning:Some services on Red Hat Enterprise Linux do not support the conf.d convention.
 
 #### Documentation
 
