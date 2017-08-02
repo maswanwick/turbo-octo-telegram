@@ -67,6 +67,11 @@ The guide outlines the common attributes shared between TI Auto, ETS, and Malver
 ##### Local Mode
 
 ##### Configuration Repositories
+| Organization | Repo location |
+| ------------ | ------------- |
+| ETS | https://github.cerner.com/ets/ets_chef-repo |
+| CWXTI Auto | https://github.cerner.com/CWXAutomation |
+| Malvern | https://github.cerner.com/cernerhs-cwx-ti |
 
 ### Process
 
