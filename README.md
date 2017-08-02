@@ -196,6 +196,7 @@ https://github.cerner.com/CWxAutomation/cwxtiauto_lvm/blob/dev/README.md
         - Used when flexing based on the technology stack of the given node.
         - Set via a role cookbook.
         - Valid values:
+
         | Valid Value | Details |
         | ----------- | ------- |
         |724midtier | 724 DTV (Level 2) midtier node|
