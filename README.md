@@ -7,9 +7,10 @@ The guide outlines the common attributes shared between TI Auto, ETS, and Malver
 
 ### Style Guide
 
-   #### Naming Convention
+#### Naming Convention
+:warning: All names should contain undersocres instead of hyphens.
 
-      ##### Cookbook
+##### Cookbook
 
 ##### Recipes
 
