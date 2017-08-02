@@ -107,7 +107,7 @@ The guide outlines the common attributes shared between TI Auto, ETS, and Malver
 ##### Roles
 - All roles should be created in the cwx_chef_config GitHub repository (https://github.cerner.com/CWxAutomation/cwx_chef_config) within the roles directory.
 
-:white_check_mark: **Example** roles/example_region.rb
+:white_check_mark: **Example:** roles/example_region.rb
 ```
 name "example_region"
 
@@ -143,7 +143,38 @@ default_attributes(
 ##### Configuration
 
 ##### Rotation
+Logs are rotated every week using [logrotate](https://linux.die.net/man/8/logrotate) and kept for four weeks as compressed files.
 
+**Location**
+
+The logrotate configuration file for Chef logs is found within the **/etc/logrotate.d/chef** file.
+
+```
+view /etc/logrotate.d/chef
+```
+
+**Configuration**
+
+The following configuration items are currently utilized in the logrotate configuration.
+
+| Item | Description |
+| ---- | ----------- |
+| weekly | Logs are rotated weekly. |
+| rotate 4 | Logs are kept four weeks. |
+| compress | Logs are compressed when located. |
+
+**Example**
+
+An example of a correct logrotate configuration file for Chef is as follows.
+
+```
+/var/log/chef/chef-client.log {
+        weekly
+        rotate 4
+        compress
+}
+```
+:heavy_exclamation_mark: Manual modifications to any of the logging files managed by Chef will be overwritten when 'chef-client' is ran.
 
 </details>
 
