@@ -107,7 +107,7 @@ The guide outlines the common attributes shared between TI Auto, ETS, and Malver
 ##### Roles
 - All roles should be created in the cwx_chef_config GitHub repository (https://github.cerner.com/CWxAutomation/cwx_chef_config) within the roles directory.
 - :white_check_mark: **Example** roles/example_region.rb
-- ```
+```
 name "example_region"
 
 description "Example Region Nodes"
