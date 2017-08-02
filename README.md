@@ -3,7 +3,7 @@ The purpose of this guide is to outline the standards and best practices for dev
 
 The guide outlines the common attributes shared between TI Auto, ETS, and Malvern, as well as governance specific to the individual organizations.
 
-<details><summary><h1>Common</h1></summary>
+<details><summary>Common</summary>
 
 ### Style Guide
 
@@ -96,11 +96,57 @@ The guide outlines the common attributes shared between TI Auto, ETS, and Malver
 #### Releasing
 </details>
 
-<details><summary><h2>TI Auto</h2></summary>
+<details><summary>TI Auto</summary>
+
+### Style Guide
+
+#### Naming Convention
+
+##### Cookbook
+
+##### Roles
+- All roles should be created in the cwx_chef_config GitHub repository (https://github.cerner.com/CWxAutomation/cwx_chef_config) within the roles directory.
+- :white_check_mark: **Example** roles/example_region.rb
+- ```
+name "example_region"
+
+description "Example Region Nodes"
+
+default_attributes(
+  cwx: {
+    region: 'example'
+  }
+}
+```
+
+##### Conf.d
+
+#### Documentation
+
+##### Readme.md
+
+##### Headers
+
+### Behavior
+
+#### Attribute Handling
+
+##### Standard Attributes
+
+##### Feature Attributes
+
+#### Logging
+
+##### Location
+
+##### Configuration
+
+##### Rotation
+
 
 </details>
 
-<details><summary><h3>ETS</h3></summary>
+<details><summary>ETS</summary>
 
 </details>
 
