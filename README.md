@@ -139,6 +139,7 @@ Use cookstyle via rubocop to validate cookbooks are following established Chef/R
 
 ##### Cookbook
 - Cookbooks should be named according to the following table.
+
 | Cookbook Type | Naming Standard | Example Name |
 | ------------- | --------------- | ------------ |
 | CernerWorks Tech Stack Role Cookbook | cwx_<tech_stack>_role | cwx_linux_role |
