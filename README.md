@@ -22,6 +22,25 @@ The guide outlines the common attributes shared between TI Auto, ETS, and Malver
 #### Documentation
 
 ##### README.md
+- All cookbooks should contain a README.md file with the following sections.
+    - Recipes to consume
+    - Requirements
+        - Required platform
+        - Chef version
+        - Required cookbooks
+    - Resources
+        - Custom resource actions
+        - Parameters
+        - Usage
+    - Default attributes
+    - Usage
+    - Testing instructions
+    - Issue tracking
+        - Link to JIRA queue used to log issues related to the cookbook
+    - uCern
+        - Link to related uCern group and wiki page
+    - Contributing
+        - Steps necessary to contribute to the cookbook
 
 ##### Headers
 
